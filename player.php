@@ -17,21 +17,21 @@ class Player{
     */
     public $taxi;
     /**
-	* @var int number of ticket bus.
-	*/
+    * @var int number of ticket bus.
+    */
     public $bus;
     /**
-	* @var int number of ticket train or underground.
-	*/
+    * @var int number of ticket train or underground.
+    */
     public $train;
     /**
-	* @var int the current position of the detective.
-	*/
+    * @var int the current position of the detective.
+    */
     private $position = new cards();
     
     /**
-	* @param name, number of tickets taxi, number of tickets bus and number of tickets train of the detective.
-	*/
+    * @param name, number of tickets taxi, number of tickets bus and number of tickets train of the detective.
+    */
     public function __construct(Game $name, $taxi, $bus, $train){
         $this->name = $name;
         $this->taxi = $taxi;
@@ -41,15 +41,15 @@ class Player{
     }
     
     /**
-	* @param the new position of the detective.
-	*/
+    * @param the new position of the detective.
+    */
     public function setPosition($newPosition){
        $this->position = $newPosition;
     }
     
     /**
-	* @return the current position of the detective.
-	*/
+    * @return the current position of the detective.
+    */
     public function getPosition(){
         return $this->position;
     }
