@@ -8,35 +8,41 @@
 // mrx is child class of Abstract_Character, anything both type of characters do
 // should go in there. 
 class Mrx extends AbstractData{ 
-
-    public $blackTicket;
+    
     /**
-    * @var int number of double.
+    * @var int number of black tickets.
     */
-    public $double;  
+    public $blackTicket;
+    
+    /**
+    * @var int number of double tickets.
+    */
+    public $double; 
+    
     /**
     * @var associative array for the travel log of Mr X.
     */
     private $travelLog;
     
-    
     /**
     * @param number of taxi tickets, number of bus tickets, number of train tickets and number of black tickets of Mr. X
     */
     public function __construct($taxi, $bus, $train, $blackTicket){
-
+        
+        /**
+        * @param name, number of taxi tickets, number of bus tickets, number of train tickets of the parent constructor
+        */
         parent::__construct($name, $taxi, $bus, $train);
         
         $this->name = 'Mr X'; 
         $this->blackTicket = $blackTicket;
         $this->double = 2; 
         $this->travelLog = array(); 
-    } 
-    /**
-    * @param the new position of the detective.
-    */
+    }
     
-
+    /**
+    * @param the new position of Mr. X
+    */
     public function move($newPosition){
         $this->position = $newPosition; 
 
@@ -66,13 +72,19 @@ class Mrx extends AbstractData{
         }
     }
     
+    /**
+    * @param the new positions of Mr. X
+    */
     public function doubleMove($position1, $position2){
         $this->move($position1);
         $this->move($position2);
         $this->position = $position2;
         $this->double --;
     }
-
+    
+    /**
+    * @return an associative array that represents Mr. X's travel log
+    */
     public function getTravelLog(){
         return $this->travelLog;
     }
