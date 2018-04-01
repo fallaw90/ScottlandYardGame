@@ -27,7 +27,7 @@ class Player{
     /**
     * @var int the current position of the detective.
     */
-    private $position = new cards();
+    private $position = new Card();
     
     /**
     * @param name, number of tickets taxi, number of tickets bus and number of tickets train of the detective.
