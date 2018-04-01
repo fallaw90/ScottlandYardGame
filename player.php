@@ -25,9 +25,13 @@ class Player{
     */
     public $train;
     /**
-    * @var int the current position of the detective.
+    * @var object card.
     */
-    private $position = new Card();
+    private $card = new Card();
+    /**
+    * @var int the current position of Mr X.
+    */
+    private $position;
     
     /**
     * @param name, number of tickets taxi, number of tickets bus and number of tickets train of the detective.
@@ -43,8 +47,25 @@ class Player{
     /**
     * @param the new position of the detective.
     */
-    public function setPosition($newPosition){
-       $this->position = $newPosition;
+    public function move($newPosition){
+        
+        $this->position = $newPosition;
+        if(isset($_POST['taxi'])){
+            $this->taxi --;
+            $vehicle = 'taxi';
+        }
+        
+        elseif(isset($_POST['bus'])){
+            $this->bus --;
+            $vehicle = 'bus';
+        }
+        
+        elseif(isset($_POST['train'])){
+            $this->bus --;
+            $vehicle = 'train';
+        }
+        
+        return $vehicle;
     }
     
     /**
@@ -53,6 +74,5 @@ class Player{
     public function getPosition(){
         return $this->position;
     }
-    
-   
+     
 }
