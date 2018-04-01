@@ -6,7 +6,7 @@
      * Time: 3:00 PM
      */
 
-include'cards.php';
+include'card.php';
 class Player{
     /**
     * @var String name of the detective type.
