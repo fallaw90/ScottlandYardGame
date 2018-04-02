@@ -20,23 +20,18 @@ class Player extends AbstractData{
     }
     
     /**
-    * @param the new position of the detective.
+    * @param the new position and the vehicle that the detective takes to move on the new location.
     */
-    public function move($newPosition){
+    public function move($newPosition, $vehicle){
         $this->position = $newPosition; 
-        $mrx->bus ++;
-
-        if(isset($_POST['taxi'])){
+        if(strcmp($vehicle, "taxi")){
             $this->taxi --; 
-            $mrx->taxi ++;
         }
-        elseif(isset($_POST['bus'])){
+        elseif((strcmp($vehicle, "bus")){
             $this->bus --; 
-            $mrx->bus ++;
         }
-        elseif(isset($_POST['train'])){
+        elseif((strcmp($vehicle, "train")){
             $this->train --; 
-            $mrx->train ++;
         }   
     } 
      
