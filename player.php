@@ -22,15 +22,19 @@ class Player extends AbstractData{
     /**
     * @param the new position and the vehicle that the detective takes to move on the new location.
     */
-    public function move($newPosition, $vehicle){
+    public function move($newPosition, $ticket){
+        
         $this->position = $newPosition; 
-        if(strcmp($vehicle, "taxi")){
+        //if the detective took a taxi
+        if(strcmp($ticket, "taxi")){
             $this->taxi --; 
         }
-        elseif((strcmp($vehicle, "bus")){
+        //if the detective took a taxi
+        elseif((strcmp($ticket, "bus")){
             $this->bus --; 
         }
-        elseif((strcmp($vehicle, "train")){
+        //if the detective took a taxi
+        elseif((strcmp($ticket, "train")){
             $this->train --; 
         }   
     } 
