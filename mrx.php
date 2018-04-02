@@ -41,32 +41,33 @@ class Mrx extends AbstractData{
     }
     
     /**
-    * @param the new position of Mr. X
+    * @param the new position and the vehicle that Mr. X takes to move on the new location.
     */
-    public function move($newPosition){
+    public function move($newPosition, $ticket){
         $this->position = $newPosition; 
-
-        //For test
-        $this->travelLog[$newPosition] = 'taxi';
-        $this->taxi --;
         
-        if(isset($_POST['taxi'])){
+        //If Mr. X took a taxi
+        if(strcmp($ticket, 'taxi')){
             $this->taxi --;
             $this->travelLog[$newPosition] = 'taxi';
         }
-        elseif(isset($_POST['bus'])){
+        //If Mr. X took a bus
+        elseif(strcmp($ticket, 'bus')){
             $this->bus --;
             $this->travelLog[$newPosition] = 'bus';
         }
-        elseif(isset($_POST['train'])){
-            $this->bus --;
+        //If Mr. X took a train
+        elseif(strcmp($ticket, 'train')){
+            $this->train --;
             $this->travelLog[$newPosition] = 'train';
         }
-        elseif(isset($_POST['boat'])){
+        //If Mr. X took a boat
+        elseif(strcmp($ticket, 'boat')){
             $this->blackTicket --;
             $this->travelLog[$newPosition] = 'blackTicket';
         }
-        elseif(isset($_POST['blackTicket'])){
+        //If Mr. X uses a black ticket. In this case we don't know what vehicle he took so we just put blackTicket on the travel log
+        elseif(strcmp($ticket, 'blackTicket')){
             $this->blackTicket --;
             $this->travelLog[$newPosition] = 'blackTicket';
         }
@@ -75,9 +76,9 @@ class Mrx extends AbstractData{
     /**
     * @param the new positions of Mr. X
     */
-    public function doubleMove($position1, $position2){
-        $this->move($position1);
-        $this->move($position2);
+    public function doubleMove($newPosition1, $ticket1, $newPosition2, $ticket2){
+        $this->move($position1, $ticket1);
+        $this->move($position2, $ticket2);
         $this->position = $position2;
         $this->double --;
     }
