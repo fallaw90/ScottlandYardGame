@@ -21,10 +21,11 @@
 	echo 'Number of black tickes: '.$mrx->blackTicket;
 	echo "<br/>";
 	echo 'Number of double tickes: '.$mrx->double;
-	$mrx->move(14);
+	$mrx->move(14, "taxi");
+	$mrx->move(100, "train");
 	echo "<br/>";
 	echo 'Position after single move: '.$mrx->getPosition();
-	$mrx->doubleMove(45, 654);
+	$mrx->doubleMove(45, "blackTicket", 65, "bus");
 	echo "<br/>";
 	echo 'Position after double move move: '.$mrx->getPosition();
 	echo "<br/>";
@@ -46,11 +47,12 @@
 	echo 'Number of bus tickets: '.$d1->bus;
 	echo "<br/>";
 	echo 'Number of train tickets: '.$d1->train; 
-	$d1->move(156);
+	$d1->move(156, "bus");
+	$mrx->bus++;
 	echo "<br/>";
 	echo 'Position after move: '.$d1->getPosition(); 
 	echo "<br/>";
-	//echo 'Number of bus tickets Mr X: '.$mrx->bus;
+	echo 'Number of bus tickets Mr X: '.$mrx->bus;
 
 
 ?>
