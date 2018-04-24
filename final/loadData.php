@@ -44,15 +44,15 @@
 		$_SESSION['d4Move'] = True; 
 		$_SESSION['d5Move']	= True;
 
-		$_SESSION['d1'] = new Player("Detective 1", 10, 8, 5); 
+		$_SESSION['d1'] = new Player("Detective 1", 10, 8, 4); 
 		$_SESSION['d1']->setPosition(array_pop($cards)); 
-		$_SESSION['d2'] = new Player("Detective 2", 10, 8, 5);
+		$_SESSION['d2'] = new Player("Detective 2", 10, 8, 4);
 		$_SESSION['d2']->setPosition(array_pop($cards)); 
-		$_SESSION['d3'] = new Player("Detective 3", 10, 8, 5);
+		$_SESSION['d3'] = new Player("Detective 3", 10, 8, 4);
 		$_SESSION['d3']->setPosition(array_pop($cards)); 
-		$_SESSION['d4'] = new Player("Detective 4", 10, 8, 5);
+		$_SESSION['d4'] = new Player("Detective 4", 10, 8, 4);
 		$_SESSION['d4']->setPosition(array_pop($cards)); 
-		$_SESSION['d5'] = new Player("Detective 5", 10, 8, 5);
+		$_SESSION['d5'] = new Player("Detective 5", 10, 8, 4);
 		$_SESSION['d5']->setPosition(array_pop($cards));  
 		// traverse the object with all areas
 
